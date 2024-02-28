@@ -2,3 +2,5 @@
 # Run the following commands in the terminal:
 
   python app.py
+
+# This will create a SQLite database file named events.db and start the Flask server.
