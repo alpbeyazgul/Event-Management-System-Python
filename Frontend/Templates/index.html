@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+</head>
+<body>
+    <h1>Welcome to the Event Management System</h1>
+
+    <form action="/add_event" method="POST">
+        <label for="title">Event Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="date">Event Date:</label>
+        <input type="date" id="date" name="date" required>
+        <button type="submit">Create Event</button>
+    </form>
+
+    <h2>Upcoming Events</h2>
+    <ul id="events-list"></ul>
+
+    <script>
+        fetch('/').then(response => response.json())
+            .then(events => {
+                const eventsList = document.getElementById('events-list');
+                events.forEach(event => {
+                    const li = document.createElement('li');
+                    li.textContent = `${event.title} - ${event.date}`;
+                    eventsList.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>
