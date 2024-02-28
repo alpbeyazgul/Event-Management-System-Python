@@ -1,0 +1,5 @@
+## Install Required Packages:
+
+# Make sure you have Python installed. Create a new project folder, open a terminal, and run the following commands:
+
+pip install Flask Flask-SQLAlchemy
